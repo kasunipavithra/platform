@@ -51,6 +51,8 @@ class ExportPostsBatchJob extends Job
 
         $batch = $usecase->interact();
 
+        Log::debug('Batch completed', [$batch]);
+
         // Check for success!?!
         // Or can I just ignore it and let exceptions do there thing?
 
