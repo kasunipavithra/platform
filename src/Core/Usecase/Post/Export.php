@@ -171,7 +171,7 @@ class Export implements Usecase
         $this->repo->update($batchEntity);
 
         return [
-            'file' => $file->file, // rename to filename?
+            'filename' => $file->file,
             'id' => $batchId,
             'rows' => $batchEntity->rows,
             'status' => $batchEntity->status

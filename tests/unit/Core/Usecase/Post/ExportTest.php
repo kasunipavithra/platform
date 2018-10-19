@@ -164,6 +164,6 @@ class ExportTest extends TestCase
             ->setIdentifiers(['job_id' => $this->jobId])
             ->interact();
 
-        $this->assertArrayHasKey('file', $results);
+        $this->assertArrayHasKey('filename', $results);
     }
 }
