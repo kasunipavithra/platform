@@ -163,6 +163,7 @@ class Export implements Usecase
 
         // Update export batch status=done
         // Include filename, post count, header row etc
+        $batchEntity = $this->repo->get($batchId);
         $batchEntity->setState([
             'status' => 'completed',
             'filename' => $file->file,
@@ -173,6 +174,7 @@ class Export implements Usecase
         return [
             'filename' => $file->file,
             'id' => $batchId,
+            'jobId' => $job->id,
             'rows' => $batchEntity->rows,
             'status' => $batchEntity->status
         ];
