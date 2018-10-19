@@ -95,8 +95,9 @@ abstract class EloquentRepository implements
      */
     protected function selectOne(array $where = [])
     {
-        return $this->selectQuery($where)
-            ->first();
+        return collect(
+            $this->selectQuery($where)->first()
+        )->toArray();
     }
 
     /**
